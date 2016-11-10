@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Login</h3>
+    </div>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="panel-body">
+            <div *ngIf="userService.user">{{JSON.stringify(userService.user)}}</div>
+            <div class="alert alert-danger" *ngIf="err">
+                <strong>{{err.errorType}}</strong> <br> {{err.message}}
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" [(ngModel)]="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" required>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-default">Absenden</button>
+        </div>
+    </form>
+</div>

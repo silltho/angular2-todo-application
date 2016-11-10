@@ -1,0 +1,1 @@
+cd ./client && npm run tsc && cd ./.. && npm run server-start
