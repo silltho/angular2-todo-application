@@ -10,6 +10,10 @@ var appRoutes = [
     {
         path: 'start',
         component: start_component_1.StartComponent
+    },
+    {
+        path: 'test',
+        component: start_component_1.StartComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

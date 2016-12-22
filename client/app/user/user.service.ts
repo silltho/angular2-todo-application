@@ -1,6 +1,6 @@
 import { Injectable }       from '@angular/core';
 import { Headers, Http }    from '@angular/http';
-import { CookieService }    from 'angular2-cookie/core';
+//import { CookieService }    from 'angular2-cookie/core';
 import { BehaviorSubject }  from 'rxjs/BehaviorSubject';
 import { Observable }       from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -18,7 +18,7 @@ export class UserService{
     private _loggedInUser: BehaviorSubject<User> = new BehaviorSubject<User>(new User({}));
     public loggedInUser: Observable<User> = this._loggedInUser.asObservable();
 
-    constructor (private http: Http, private cookieService: CookieService) {
+    constructor (private http: Http) {
         this.init();
     }
 
@@ -27,13 +27,12 @@ export class UserService{
     }
 
     login(username: string, password: string): Observable<void> {
-        console.log("test1");
         let body = JSON.stringify({username: username, password: password});
 
         return this.http.post(this.loginUrl, body, {headers: this.headers})
             .map(
                 res => {
-                    this.cookieService.remove('connect.sid');
+                    //this.cookieService.remove('connect.sid');
                     this._loggedInUser.next(new User(res.json()))
                 }
                 //TODO handle Error

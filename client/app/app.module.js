@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 var platform_browser_1 = require('@angular/platform-browser');
-var core_2 = require('../node_modules/angular2-cookie/core');
+//import { CookieService }    from '../node_modules/angular2-cookie/core';
 var app_component_1 = require('./app.component');
 var start_component_1 = require('./start/start.component');
 var index_1 = require('./user/index');
@@ -35,8 +35,7 @@ var AppModule = (function () {
                 index_1.PanelComponent
             ],
             providers: [
-                index_1.UserService,
-                core_2.CookieService
+                index_1.UserService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

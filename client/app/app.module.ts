@@ -2,7 +2,7 @@ import { NgModule }         from '@angular/core';
 import { HttpModule }       from '@angular/http';
 import { FormsModule }      from '@angular/forms';
 import { BrowserModule }    from '@angular/platform-browser';
-import { CookieService }    from '../node_modules/angular2-cookie/core';
+//import { CookieService }    from '../node_modules/angular2-cookie/core';
 
 import { AppComponent }         from './app.component';
 import { StartComponent }       from './start/start.component';
@@ -27,8 +27,8 @@ import { routing }              from './app.routing';
         PanelComponent
     ],
     providers: [
-        UserService,
-        CookieService
+        UserService
+        //CookieService
     ],
     bootstrap:    [ AppComponent ]
 })

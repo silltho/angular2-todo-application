@@ -10,14 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var core_2 = require('angular2-cookie/core');
+//import { CookieService }    from 'angular2-cookie/core';
 var BehaviorSubject_1 = require('rxjs/BehaviorSubject');
 require('rxjs/add/operator/map');
 var index_1 = require('../shared/index');
 var UserService = (function () {
-    function UserService(http, cookieService) {
+    function UserService(http) {
         this.http = http;
-        this.cookieService = cookieService;
         this.loginUrl = './login';
         this.loggedinUrl = './loggedin';
         this.signupUrl = './signup';
@@ -32,11 +31,10 @@ var UserService = (function () {
     };
     UserService.prototype.login = function (username, password) {
         var _this = this;
-        console.log("test1");
         var body = JSON.stringify({ username: username, password: password });
         return this.http.post(this.loginUrl, body, { headers: this.headers })
             .map(function (res) {
-            _this.cookieService.remove('connect.sid');
+            //this.cookieService.remove('connect.sid');
             _this._loggedInUser.next(new index_1.User(res.json()));
         });
     };
@@ -86,7 +84,7 @@ var UserService = (function () {
     };
     UserService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, core_2.CookieService])
+        __metadata('design:paramtypes', [http_1.Http])
     ], UserService);
     return UserService;
 }());

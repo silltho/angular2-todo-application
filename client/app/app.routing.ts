@@ -12,6 +12,10 @@ const appRoutes: Routes = [
   {
     path: 'start',
     component: StartComponent
+  },
+  {
+    path: 'test',
+    component: StartComponent
   }
 ];
 

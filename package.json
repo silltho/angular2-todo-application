@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "server-start": "node ./bin/start.js",
+    "start": "node ./bin/start.js",
     "server-test": "node ./bin/mocha.js",
     "server-test-debug": "mocha --debug"
   },

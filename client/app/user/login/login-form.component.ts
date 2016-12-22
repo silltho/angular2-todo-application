@@ -1,4 +1,5 @@
 import { Component }    from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UserService }  from '../user.service';
 import {
@@ -16,12 +17,15 @@ export class LoginFormComponent {
     err: ApiError = null;
     username: string = '';
     password: string = '';
-    constructor(private userService: UserService) {}
+    constructor(private userService: UserService, private router: Router) {}
 
 
     onSubmit() : void {
         this.userService.login(this.username, this.password).subscribe(
-            null , //TODO weiterleiten
+            function() {
+                console.log("test1");
+                this.router.navigate('test123');
+            }, //TODO weiterleiten
             null//err => this.err = err.json()
         );
     }
