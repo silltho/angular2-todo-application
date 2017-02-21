@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>ToDo - Applikation (AngularJS �bung)</title>
+	<script type="text/javascript" src="/assets/lib/jquery/jquery-2.1.1.js"></script>
+
+	<script type="text/javascript" src="/assets/lib/angularjs/angular.js"></script>
+	<script type="text/javascript" src="/assets/lib/angularjs/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/assets/lib/angularjs/angular-resource.js"></script>
+
+	<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
+	<link rel="stylesheet" href="/assets/css/todoapp.css">
+	<script type="text/javascript" src="/client/app/app.js"></script>
+	<script type="text/javascript" src="/client/app/config.js"></script>
+	<script type="text/javascript" src="/client/app/routes.js"></script>
+
+	<script type="text/javascript" src="/client/app/shared/models/autofocus-when/autofocus-when-directive.js"></script>
+	<script type="text/javascript" src="/client/app/shared/models/ng-enter/ng-enter-directive.js"></script>
+
+	<script type="text/javascript" src="/client/app/user/user-service.js"></script>
+	<script type="text/javascript" src="/client/app/user/user-controller.js"></script>
+	<script type="text/javascript" src="/client/app/user/login-controller.js"></script>
+
+	<link rel="stylesheet" href="/client/app/todolist/todolist.css">
+	<script type="text/javascript" src="/client/app/todolist/todo-factory.js"></script>
+	<script type="text/javascript" src="/client/app/todolist/todo-filter.js"></script>
+	<script type="text/javascript" src="/client/app/todolist/todo-service.js"></script>
+	<script type="text/javascript" src="/client/app/todolist/todo-controller.js"></script>
+</head>
+
+<body ng-app="todoApplication">
+<div class="wrapper">
+	<div ui-view></div>
+</div>
+</body>
+</html>

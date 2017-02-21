@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h3>Todos</h3>
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title pull-left">
+                    <strong>Zu Erledigen</strong>
+                </h3>
+                <span class="pull-right">Anzahl: {{undoneTodos.length}}</span>
+            </div>
+            <table class="table table-striped panel-body">
+                <tr>
+                    <td colspan="2">
+                        <form ng-submit="todoCtrl.addToDo(toDoAdd)" style="margin-bottom: 0">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <input class="form-control" type="text"
+                                           ng-model="toDoAdd.description" placeholder="Beschreibung ToDo"/>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="submit" class="btn btn-default pull-right">hinzufügen</button>
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr ng-repeat="undoneTodo in todos | undone as undoneTodos">
+                    <td ng-hide="undoneTodo.editing"
+                        ng-click="undoneTodo.editing = true" class="col-lg-10">
+                        <div class="editable-field">
+                            {{undoneTodo.description}} <span
+                                class="glyphicon glyphicon-pencil pull-right"></span>
+                        </div>
+                    </td>
+                    <td ng-show="undoneTodo.editing" class="col-lg-10"><input
+                            ng-model="undoneTodo.description"
+                            ng-enter="todoCtrl.updateToDo(undoneTodo)"
+                            ng-blur="todoCtrl.updateToDo(undoneTodo)"
+                            autofocus-when="undoneTodo.editing" ng-required
+                            class="form-control" type="text"/>
+                    </td>
+                    <td class="col-lg-2 text-right"><span
+                            ng-click="undoneTodo.done = true;todoCtrl.updateToDo(undoneTodo)"
+                            class="icon icon-done glyphicon glyphicon-ok"></span> <span
+                            ng-click="todoCtrl.deleteToDo(undoneTodo)"
+                            class="icon icon-delete glyphicon glyphicon-trash"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="panel panel-success">
+    <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">
+            <strong>Erledigt</strong>
+        </h3>
+        <span class="pull-right">Anzahl: {{doneTodos.length}}</span>
+    </div>
+    <table class="table table-striped panel-body">
+        <tr ng-repeat="doneTodo in todos | done as doneTodos">
+            <td class="col-lg-10">{{doneTodo.description}}</td>
+            <td class="col-lg-2 text-right"><span
+                    ng-click="doneTodo.done = false;todoCtrl.updateToDo(doneTodo)"
+                    class="icon icon-undone glyphicon glyphicon-remove"></span> <span
+                    ng-click="todoCtrl.deleteToDo(doneTodo,$index)"
+                    class="icon icon-delete glyphicon glyphicon-trash"></span></td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <ul>
+            <li *ngFor="let todo of todos">{{todo.description}}</li>
+        </ul>
+    </div>
+</div>

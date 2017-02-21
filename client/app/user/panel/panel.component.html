@@ -1,0 +1,14 @@
+<div class="well well-sm" *ngIf="user.username" style="margin: 0;">
+    <div class="media">
+        <a class="thumbnail pull-left">
+            <span class="glyphicon glyphicon-user "></span>
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">
+                {{user.username}} <a class="btn btn-xs btn-default pull-right"
+                                            (click)="logoutUser()">loggout</a>
+            </h4>
+            {{user.firstName}} {{user.lastName}}
+        </div>
+    </div>
+</div>
