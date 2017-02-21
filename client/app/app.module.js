@@ -12,9 +12,15 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 var platform_browser_1 = require('@angular/platform-browser');
+<<<<<<< HEAD
 var app_component_1 = require('./app.component');
 var start_component_1 = require('./start/start.component');
 var todolist_component_1 = require('./todolist/todolist.component');
+=======
+//import { CookieService }    from '../node_modules/angular2-cookie/core';
+var app_component_1 = require('./app.component');
+var start_component_1 = require('./start/start.component');
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
 var index_1 = require('./user/index');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
@@ -31,7 +37,10 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 start_component_1.StartComponent,
+<<<<<<< HEAD
                 todolist_component_1.TodoListComponent,
+=======
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
                 index_1.LoginFormComponent,
                 index_1.PanelComponent
             ],

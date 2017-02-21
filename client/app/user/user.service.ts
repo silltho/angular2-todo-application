@@ -1,5 +1,9 @@
 import { Injectable }       from '@angular/core';
 import { Headers, Http }    from '@angular/http';
+<<<<<<< HEAD
+=======
+//import { CookieService }    from 'angular2-cookie/core';
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
 import { BehaviorSubject }  from 'rxjs/BehaviorSubject';
 import { Observable }       from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -22,7 +26,11 @@ export class UserService{
     }
 
     init(): void {
+<<<<<<< HEAD
         this.getLoggedinUser().subscribe();
+=======
+        this.getLoggedinUser().subscribe(res => console.log("test"));
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
     }
 
     login(username: string, password: string): Observable<void> {

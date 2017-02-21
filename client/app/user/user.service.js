@@ -10,6 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+<<<<<<< HEAD
+=======
+//import { CookieService }    from 'angular2-cookie/core';
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
 var BehaviorSubject_1 = require('rxjs/BehaviorSubject');
 require('rxjs/add/operator/map');
 var index_1 = require('../shared/index');
@@ -26,7 +30,11 @@ var UserService = (function () {
         this.init();
     }
     UserService.prototype.init = function () {
+<<<<<<< HEAD
         this.getLoggedinUser().subscribe();
+=======
+        this.getLoggedinUser().subscribe(function (res) { return console.log("test"); });
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
     };
     UserService.prototype.login = function (username, password) {
         var _this = this;

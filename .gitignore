@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -47,3 +48,8 @@ node_modules
 .idea/vcs.xml
 .idea/workspace.xml
 db/db.db
+=======
+.idea
+db/db.db
+node_modules
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2

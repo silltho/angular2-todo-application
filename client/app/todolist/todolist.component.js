@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var user_service_1 = require('../user/user.service');
+<<<<<<< HEAD
 var TodoListComponent = (function () {
     function TodoListComponent(userService) {
         var _this = this;
@@ -17,14 +18,33 @@ var TodoListComponent = (function () {
         this.userService.loggedInUser.subscribe(function (user) { return _this.todos = user.todos; });
     }
     TodoListComponent = __decorate([
+=======
+var LoginFormComponent = (function () {
+    function LoginFormComponent(userService) {
+        this.userService = userService;
+        this.blah = "";
+    }
+    LoginFormComponent.prototype.test = function () {
+    };
+    LoginFormComponent.prototype.onSubmit = function () {
+    };
+    LoginFormComponent = __decorate([
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
         core_1.Component({
             moduleId: module.id,
             selector: 'tda-todolist',
             templateUrl: './todolist.component.html'
         }), 
         __metadata('design:paramtypes', [user_service_1.UserService])
+<<<<<<< HEAD
     ], TodoListComponent);
     return TodoListComponent;
 }());
 exports.TodoListComponent = TodoListComponent;
+=======
+    ], LoginFormComponent);
+    return LoginFormComponent;
+}());
+exports.LoginFormComponent = LoginFormComponent;
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
 //# sourceMappingURL=todolist.component.js.map

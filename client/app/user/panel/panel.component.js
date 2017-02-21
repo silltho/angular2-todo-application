@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var user_service_1 = require('../user.service');
+<<<<<<< HEAD
 var router_1 = require('@angular/router');
 var PanelComponent = (function () {
     function PanelComponent(userService, router) {
@@ -27,6 +28,16 @@ var PanelComponent = (function () {
     PanelComponent.prototype.logoutUser = function () {
         var _this = this;
         this.userService.logout().subscribe(function (res) { return _this.router.navigate(['start']); }, function (err) { return console.log("logouterror"); });
+=======
+var PanelComponent = (function () {
+    function PanelComponent(userService) {
+        var _this = this;
+        this.userService = userService;
+        this.userService.loggedInUser.subscribe(function (user) { return _this.user = user; });
+    }
+    PanelComponent.prototype.logoutUser = function () {
+        this.userService.logout().subscribe(function (res) { return console.log("logoutsuccess"); }, function (err) { return console.log("logouterror"); });
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
     };
     PanelComponent = __decorate([
         core_1.Component({
@@ -35,7 +46,11 @@ var PanelComponent = (function () {
             templateUrl: './panel.component.html',
             styleUrls: ['./panel.component.css']
         }), 
+<<<<<<< HEAD
         __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
+=======
+        __metadata('design:paramtypes', [user_service_1.UserService])
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
     ], PanelComponent);
     return PanelComponent;
 }());

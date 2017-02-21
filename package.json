@@ -4,7 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+<<<<<<< HEAD
     "server-start": "node ./bin/start.js",
+=======
+    "start": "node ./bin/start.js",
+>>>>>>> 8ccfcd11c439848ff8da5e64a313d434ea5c1cb2
     "server-test": "node ./bin/mocha.js",
     "server-test-debug": "mocha --debug"
   },
